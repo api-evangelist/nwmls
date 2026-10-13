@@ -1,0 +1,67 @@
+generated: '2026-10-14'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 5
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - other
+  - website
+hosts:
+- host: api.nwmls.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: nwmls.com
+  role: api
+  relation: own
+- host: ims.nwmls.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: nwmls.com
+  role: other
+  relation: own
+- host: members.nwmls.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: nwmls.com
+  role: other
+  relation: own
+- host: nwmls.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: nwmls.com
+  role: other
+  relation: own
+- host: www.nwmls.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: nwmls.com
+  role: website
+  relation: own

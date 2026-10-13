@@ -1,23 +1,59 @@
 aid: nwmls
 name: NWMLS
-description: 'NWMLS is a company surfaced via the API Evangelist harvest backlog (source: market-gap:real-estate)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://www.nwmls.com/wp-content/uploads/2026/09/hero-neighborhood.webp
+description: 'NWMLS is a company surfaced via the API Evangelist harvest backlog (source: market-gap:real-estate) and added to the network as a stub for full-pipeline profiling.'
 url: https://raw.githubusercontent.com/api-evangelist/nwmls/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:market-gap:real-estate
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-14 (local-v5; was harvest)
 specificationVersion: '0.20'
 created: '2026-10-13'
 modified: '2026-10-13'
 tags:
 - Company
-apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Hosts
+  url: hosts/nwmls-hosts.yml
+- type: Vendors
+  url: vendors/nwmls-vendors.yml
+- type: TermsOfService
+  url: https://www.nwmls.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://www.nwmls.com/privacy-policy/
+- type: Newsroom
+  url: https://www.nwmls.com/category/news/
+- type: Blog
+  url: https://www.nwmls.com/category/blog/
+- type: DomainSecurity
+  url: security/nwmls-domain-security.yml
 - type: Website
   url: https://www.nwmls.com
+apis: []
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: NWMLS publishes no public developer program; listing data is licensed to members and approved vendors, and its IMS system at ims.nwmls.com redirects to an IMS Member Login page.
+  evidence:
+  - url: https://ims.nwmls.com/
+    status: 200
+  - url: https://www.nwmls.com/data-licensing/
+    status: 404
+  - url: https://www.nwmls.com/vendors/
+    status: 404
+  checked: '2026-10-14'
+x-distribution-vendors:
+- name: MLS Grid
+  note: NWMLS listed as an MLS Grid participant (2018 announcement); MLS Grid is a distribution vendor, not an NWMLS host
+- name: Rapattoni
+  note: IMS member portal at ims.nwmls.com is titled "IMS Rapattoni Portal Window"
+x-enrichment:
+  date: '2026-10-14'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v5
