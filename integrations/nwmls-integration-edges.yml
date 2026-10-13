@@ -1,5 +1,5 @@
 generated: '2026-10-14'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/nwmls/integrations
 - https://n8n.io/integrations/nwmls/
@@ -9,8 +9,55 @@ checked:
 - https://composio.dev/toolkits/nwmls
 - https://monid.ai/tools/nwmls
 - https://n8n.io/integrations/nwmls/
+- https://services.reso.org/orgs?showStats=true&showEndorsements=true
 - https://zapier.com/apps/nwmls/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: RESO
+  partner: reso
+  type: contract
+  channel: network-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://services.reso.org/orgs?showStats=true&showEndorsements=true
+  contract_reference:
+    register: RESO organizations and endorsements (Real Estate Standards Organization)
+    spec_file: null
+    role: MLS
+    tier: Certified Current
+    registered_name: Northwest Multiple Listing Service (NWMLS)
+    organization_uoi: M00000650
+    matched_domain: nwmls.com
+    matched_by: domain
+    endorsements:
+    - Data Dictionary 2.0 Passed
+    - Data Dictionary 1.7 Certified
+    - Web API Core 2.0.0 Certified
+    - Web API Core 2.0.0 Certified
+    - Data Dictionary 1.7 Certified
+    summary_url: https://certification.reso.org/summary/M00000650
+    detected_by: sweep-real-estate.py
+    detected: '2026-10-14'
+- partner_name: MLS Grid
+  partner: mlsgrid
+  partner_match: domain
+  type: contract
+  channel: network-directory
+  relationship: endpoint-coverage
+  direction: partner-built
+  evidence: https://services.reso.org/orgs?showStats=true&showEndorsements=true
+  category: RESO-certified feed served by vendor
+  contract_reference:
+    register: RESO organizations and endorsements (Real Estate Standards Organization)
+    spec_file: null
+    standard: RESO
+    endorsements:
+    - Web API Core 2.0.0 Certified
+    - Data Dictionary 1.7 Certified
+    organization_uoi: M00000650
+    organization_type: MLS
+    vendor_uoi: T00000045
+    detected_by: sweep-real-estate.py
+    detected: '2026-10-14'
 templates: []
